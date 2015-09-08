@@ -123,12 +123,12 @@
           };
           
           scope.$on("$destroy", function () {
-            angular.element(document).off('resize orientationchange', resizeHandler);
+            angular.element(window).off('resize orientationchange', resizeHandler);
             $nanoElement.nanoScroller({ destroy: true });
             $nanoElement = contentElement = parentElement = null;
           });
           
-          angular.element(document).on('resize orientationchange', resizeHandler);
+          angular.element(window).on('resize orientationchange', resizeHandler);
         }
       };
     };
